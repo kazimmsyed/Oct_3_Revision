@@ -1,4 +1,7 @@
 .DS_Store
-# Do not .gitignore in .gitignore file. Since it needs to be updated to tell github what to ignore everytime.
-# Also, if u intent to ignore a repo but not certain files, keep the certain files like ignore everything in the dir except t
-#file
+# Do not put  .gitignore in .gitignore file. Since it needs to be updated to tell github what to ignore everytime.
+# Also, if u intent to ignore a repo but not certain files, keep the certain files in the following fashion ignore everything in the dir except these files
+# for e.g 
+#metadata/ 
+#!metadata/*.logs
+# exclamation points tell not to ignore. Remember the power of except.
