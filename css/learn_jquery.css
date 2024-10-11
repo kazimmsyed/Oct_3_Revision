@@ -1,3 +1,9 @@
+/* 
+breakpoints are 769,
+
+*/
+
+
 :root,body,html{
     margin:0 0 0 0;
 }
@@ -18,25 +24,54 @@ section{
 #sidebar{
     display: flex;
     flex-direction: column;
-    width:12vw;
+    /* width:12vw; */
+    width: 200px;
     justify-content: flex-start;
     margin:0 0.5% 0 0;
     border:1px solid orange;
     background-color: red; 
-    z-index:3
+    z-index:3;
+    position: relative;
 }
 #sidebar_nav{
     display: flex;
     flex-direction: column;
-    position: sticky;
+    
     height:calc(100vh - 200px - 5vh - 6px); /*200px: footer 5vh from header and 6px from the margin of header. */
     top:5vh;
-    width: 12vw;
+    /* width: 12vw; */
+    width:200px;
     background-color: yellow;
     border:1px dotted red;
     margin:0 0.5% 0 0;
-    overflow: hidden;
 }
+
+
+.sidebar_p1{
+    position: sticky;
+    width:200px;
+
+}
+
+.sidebar_p2{
+    position: fixed;
+    background-color: pink;
+    width:100vw;
+}
+
+
+@media (max-width: 769px) {
+    #sidebar_nav {
+      position: fixed;
+      background-color: pink;
+      width: 65vw;
+    }
+    #sidebar{
+        width:0px;
+    }
+  }
+  
+
 
 section#split{
     display: flex;
@@ -74,3 +109,4 @@ footer{
     border:2px solid green;
     overflow-y: auto;
 }
+

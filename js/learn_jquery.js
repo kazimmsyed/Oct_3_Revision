@@ -39,5 +39,42 @@ $(document).ready(function(){
         
     });
 
+    
 
+
+    const mediaQuery = window.matchMedia('(max-width: 1100px)');
+    console.log(mediaQuery)
+    mediaQuery.addEventListener('change', () => {
+        if (mediaQuery.matches) {
+            $('#sidebar').hide(); 
+            flag2=false;
+        }
+      });
+
+      sidebar=document.getElementById('sidebar')
+      header=document.getElementById('header')
+      body=document.body;
+      
+
+      header.addEventListener('click',(e)=>{
+        e.stopPropagation();
+        e.preventDefault()
+      })
+
+      sidebar.addEventListener('click',(e)=>{
+        e.stopPropagation();
+      });
+
+
+
+      body.addEventListener('click',(e)=>{
+        if(flag2==true && window.innerWidth < 769){
+            $('#sidebar').hide();
+            flag2=false;
+        }
+      });
+
+
+      
 });
+
