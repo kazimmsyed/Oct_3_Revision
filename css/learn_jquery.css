@@ -1,7 +1,76 @@
-main{
+:root,body,html{
+    margin:0 0 0 0;
+}
+main#mainbody{
     display: flex;
-    border:1px solid pink;
+    border:2px solid pink;
     flex-direction: row;
-    width:10hw;
     justify-content: space-around;
+    width: 100%;
+    margin:0px 2% 0% 2%;
+    background-color: aqua;
+}
+
+section{
+    width:100%;
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    width:12vw;
+    justify-content: flex-start;
+    margin:0 0.5% 0 0;
+    border:1px solid orange;
+    background-color: red; 
+    z-index:3
+}
+#sidebar_nav{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    height:calc(100vh - 200px - 5vh - 6px); /*200px: footer 5vh from header and 6px from the margin of header. */
+    top:5vh;
+    width: 12vw;
+    background-color: yellow;
+    border:1px dotted red;
+    margin:0 0.5% 0 0;
+    overflow: hidden;
+}
+
+section#split{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+#header{
+    width:100%;
+    background-color:yellow;
+    height:5vh; 
+    
+}
+
+#hamburger{
+    margin:5px 0px 1px 0.25%;
+}
+
+#header_sub{
+    position:fixed;
+    background-color: green;
+    width:100%;
+    height:5vh;
+}
+
+#container{
+    width: 100%;
+    margin:0px 2% 0% 2%;
+    background-color: aqua;
+}
+
+footer{
+    width:100%;
+    height:200px;
+    border:2px solid green;
+    overflow-y: auto;
 }

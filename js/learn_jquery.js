@@ -1,6 +1,6 @@
 console.log('learn_jquery connected');
 $(document).ready(function(){
-    $('#navbar').fadeOut(500);
+    //$('#navbar').fadeOut(500);
     $('#p01').hover(function(){
         $(this).hide();
     });
@@ -22,4 +22,22 @@ $(document).ready(function(){
             }
         }
     });
+
+
+    var flag2=true
+    $('#hamburger').click(function(){
+        console.log('i was clicked',flag2)
+        if (flag2){
+            $('#sidebar').hide(); 
+            flag2=false;
+            console.log(flag2); 
+        }
+        else{
+            $('#sidebar').show();
+            flag2=true;
+        }
+        
+    });
+
+
 });
