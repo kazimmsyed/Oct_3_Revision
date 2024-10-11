@@ -1,0 +1,7 @@
+main{
+    display: flex;
+    border:1px solid pink;
+    flex-direction: row;
+    width:10hw;
+    justify-content: space-around;
+}
