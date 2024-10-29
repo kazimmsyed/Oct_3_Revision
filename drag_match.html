@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/drag_match.css">
+</head>
+<body>
+    <input type="button" id="btn_shuffle" value="shuffle">
+
+    <main id="parentDiv">
+    <section id="container1">
+        <div>Which river is the longest in the world?</div>
+        <div>What is the largest desert in the world?</div>
+        <div>Which mountain range separates Europe and Asia? </div>
+        <div>Who is known as the Father of the Nation in India?</div>
+        <div>What was the Turkish city of Istanbul called until 1923? </div>
+<div>        Which Mughal Emperor built the Taj Mahal?  </div>
+
+    </section>
+
+    
+    <section id="container2">
+        
+        <!-- div.draggable#answer$${$$}[draggable=true]*5 -->
+        <div class="draggable" id="answer05" draggable="true">
+            Constantinople <input type="button" class='btn_lock' value="Lock">
+        </div>
+        <div class="draggable" id="answer01" draggable="true"><label> Nile river </label></div>
+        
+        <div class="draggable" id="answer04" draggable="true"><label>Mahatma Gandhi</label></div>
+        <div class="draggable" id="answer03" draggable="true"><label>The Ural Mountains </label></div>
+        <div class="draggable" id="answer02" draggable="true"><label>The Antarctic Desert</label></div>
+        <div class="draggable" id="answer06" draggable="true"><label>Shah Jahan</label></div>
+    </section>
+    <section id="solved">
+        <h3>Answers:</h3>
+        <section id="container1_1">
+
+        </section>
+        <section id="container2_1">
+
+        </section>
+        
+    </section>
+</main>
+<p draggable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nesciunt! Sunt, nemo fugiat. Quibusdam, fugit quos repudiandae quidem asperiores voluptatum reprehenderit tenetur. Dolore officiis, excepturi culpa dignissimos sint ut ipsum.</p>
+
+ <!-- <main id="parentDiv2">
+    <section id="container3">
+        <div>Which river is the longest in the world?</div>
+        <div>What is the largest desert in the world?</div>
+        <div>Which mountain range separates Europe and Asia? </div>
+        <div>Who is known as the Father of the Nation in India?</div>
+        <div>What was the Turkish city of Istanbul called until 1923? </div>
+<div>        Which Mughal Emperor built the Taj Mahal?  </div>
+
+    </section>
+    <section id="container4"> -->
+            
+        <!-- div.draggable#answer$${$$}[draggable=true]*5 -->
+        <!-- <div class="draggable" id="answer05" draggable="true">Constantinople</div>
+        <div class="draggable" id="answer01" draggable="true">Nile river</div>
+        
+        <div class="draggable" id="answer04" draggable="true">Mahatma Gandhi</div>
+        <div class="draggable" id="answer03" draggable="true">The Ural Mountains </div>
+        <div class="draggable" id="answer02" draggable="true">The Antarctic Desert</div>
+        <div class="draggable" id="answer06" draggable="true">Shah Jahan</div>
+    </section>
+</main>  -->
+
+
+<script src="js/drag_match.js"></script>    
+</body>
+</html>

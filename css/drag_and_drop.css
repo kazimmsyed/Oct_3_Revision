@@ -1,0 +1,23 @@
+
+#container1{
+    margin-bottom: 10px;
+    border:10px solid orange;
+}
+
+#container2{
+    min-width: 100px;
+    border:100px solid pink;
+}
+
+div{
+    color:white;
+    background-color: black;
+    border:2px solid white;
+    height:50px;
+
+    display: block;
+}
+
+.moving{
+    background-color: grey;
+}
