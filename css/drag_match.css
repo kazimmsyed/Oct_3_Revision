@@ -29,7 +29,9 @@ section div{
     grid-template-columns:5fr 3fr;
     grid-template-rows:auto auto;
     grid-template-areas: "left_table right_table"
-    "solved solved";
+    "left_table1 right_table1";
+    grid-row-gap:2em;
+    grid-column-gap:2em;
 }
 
 #solved{
@@ -37,16 +39,22 @@ section div{
     background-color: pink;
 }
 
-
-
-
-#parentDiv2{
-
-    display:grid;
-    grid-template-columns:2fr 2fr;
-    grid-template-rows:auto;
-    grid-template-areas: "left_table2 right_table2";
+#container1_1{
+    grid-area: left_table1;
+    background-color: #0a9396;
 }
+
+#container2_1{
+    grid-area:right_table1;
+    background-color: aqua;
+}
+
+
+
+
+
+
+
 
 
 #container1{
@@ -64,22 +72,20 @@ section div{
     order:1;
 }
 
-#container3{
-    grid-area:left_table2;
+
+
+
+
+#container1 div{
+    display: flex;
 }
 
-#container4{
-    grid-area:right_table2;
+#container2 div,#container2_1 div{
+    display: grid;
+    grid-template-columns: 66% 33%;
 }
 
 
-
-
-
-section div{
-    /* border:2px solid black; */
-    padding:5px 5px;
-}
 
 section div:nth-of-type(3n){
     background-color:var(--clr-shade1);

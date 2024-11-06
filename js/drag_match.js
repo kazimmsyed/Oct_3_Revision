@@ -1,6 +1,8 @@
 cont2=document.getElementById('container2');
-solved=document.getElementById('container2_1');
-
+cont1=document.getElementById('container1');
+container2_1=document.getElementById('container2_1');
+container1_1=document.getElementById('container1_1');
+btn_lock=document.querySelector('.btn_lock');
 
 let start=function(){
     items=document.querySelectorAll('.draggable');
@@ -12,19 +14,23 @@ let start=function(){
 
         i.addEventListener('dragend',(e)=>{
             i.classList.remove('dragged');
-        })
+        });
+        
     });
 }
 
 
+let makebuttons=function(){
+    draggables=[...cont2.querySelectorAll('.draggable')].slice(1,);
+    draggables.forEach((e)=>{
+        btn_cp=btn_lock.cloneNode(false);
+        e.appendChild(btn_cp);
+    })
+}
 
-// for(let e of cont2){
-    
-//     e.appendChild('')
-// }
 
 start();
-
+makebuttons();
 
 cont2.addEventListener('dragover',(e)=>{
     moveable=document.querySelector('.dragged');
@@ -43,7 +49,8 @@ cont2.addEventListener('dragover',(e)=>{
         cont2.appendChild(moveable)
     }
     else{
-        moveable.style.order=element.style.order;
+        //code used when i used to use order.
+        // moveable.style.order=element.style.order;
         element.insertAdjacentElement('beforeBegin',moveable);
     }
 });
@@ -71,22 +78,63 @@ let getAfterElement=function(container,y){
 
 btn_lock=document.querySelectorAll('.btn_lock');
 
+
+function changeBtnText(btn){
+    // debugger;
+    if(btn.value==='Save'){
+        btn.value='Undo';
+    }
+    else{
+        btn.value='Save';
+    }
+}
+
+
 [...btn_lock].forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
+        // debugger;
         parent=btn.parentElement;
-        i=0;
-        for(let e of cont2.children){
-            debugger;
-            if(e.innerText==parent.innerText){
-                break;
-            }
-            i=i+1;
-        }
-        console.log(i)
-        solved.appendChild(parent);
+        if(btn.value=='Save'){
+            i=findElementIndex(cont2,parent);
+            // debugger;
+            // console.log(i)
+            q=document.querySelector(`#container1 div:nth-of-type(${i})`)
+            container1_1.appendChild(q);
+            container2_1.appendChild(parent);
 
+        }
+        else{
+            i=findElementIndex(container2_1,parent)-1;
+            // debugger;
+            cont1.appendChild(container1_1.children[i]);
+            cont2.appendChild(container2_1.children[i])
+        }
+        console.log('changeBtnText');
+        changeBtnText(btn);
     });
 });
+
+
+
+
+function findElementIndex(container,parent){
+    /* Maybe use a seperate list */
+    i=0;
+    for(let e of container.children){
+        // debugger;
+        i=i+1;
+        if(e.innerText==parent.innerText){
+            break;
+        }
+    }    
+    return i;
+}
+
+
+
+
+
+
 
 btn_shuffle=document.getElementById('btn_shuffle');
 
@@ -94,20 +142,33 @@ btn_shuffle=document.getElementById('btn_shuffle');
 
 
 
-btn_shuffle.addEventListener('click',(e)=>{
-    shuffle(cont2);
-})
+// btn_shuffle.addEventListener('click',(e)=>{
+//     shuffle(cont2);
+// })
+//we won't let the user shuffle.
+setTimeout(()=>{
+    shuffle(cont2)
+},500)
 
 let shuffle=function(container){
     draggable=container.querySelectorAll('.draggable');
     size=draggable.length;
     order=fisher_yates_shuffle(size);
-    i=0
-    draggable.forEach((e)=>{
-        e.style.order=order[i];
-        i++;
-    });
-
+    // i=0
+    // draggable.forEach((e)=>{
+    //     e.style.order=order[i];
+    //     i++;
+    // });
+    // console.log(order);
+    my_list=[]
+    order.forEach((e)=>{
+        my_list.push(draggable[e]);
+        cont2.removeChild(draggable[e])
+    })
+    console.log(my_list);
+    my_list.forEach((e)=>{
+        cont2.appendChild(e);
+    })
 }
 
 let fisher_yates_shuffle=(num)=>{
@@ -121,3 +182,4 @@ let fisher_yates_shuffle=(num)=>{
     }
     return l
 }
+

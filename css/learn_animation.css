@@ -1,0 +1,106 @@
+nav{
+    height:40px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.circle{
+    width:100px;
+    height:100px;
+    padding:20px;
+    border-radius:50%;
+    transition:border-radius ease-in 2s;
+    background-color: pink;
+    margin:0px auto;
+    border:2px solid black;
+    position: relative;
+}
+
+#box_d{
+    width:100px;
+    height:100px;
+    margin:0px auto;    
+    border:21px solid aliceblue;
+    animation: hulaloops 3s infinite;
+    /* animation-direction: alternate; */
+    animation-iteration-count: 2;
+    transition: transform ease-in 250ms;
+    animation-play-state: running;
+}
+
+#box_d:hover{
+    animation-play-state: paused;
+}
+
+.controls{
+    display: flex;
+    flex-direction: row;
+}
+
+.controls div{
+    width:100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+
+}
+@keyframes hulaloops{
+    0%{
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    25%{
+        transform:  rotateY(180deg);
+    }
+
+    50%{
+        transform: rotateY(180deg) rotate(-90deg) ;
+    }
+
+    75%{
+        transform: rotateY(180deg) rotate(-90deg) rotateY(180deg);
+        /* transition: transform ease-in-out 250ms; */
+    }
+    100%{
+        transform: rotateY(180deg) rotate(-90deg) rotateY(180deg) rotate(-90deg);
+    }
+}
+
+
+@keyframes slideLeftIn{
+    0%{
+        transform: translate(-100vw, 0px);
+        transition:transform ease-in 500ms;
+    }
+    100%{
+        transform:translateX(0);
+        transition: transform ease-out 500ms;
+    }
+
+}
+
+.circle span{
+    position: absolute;
+    animation: slideLeftIn;
+    animation-duration: 500ms;
+}
+
+
+/* .circle span{
+    position: absolute;
+    transform: translate(-100vw, 0px);
+    transition:transform ease-in 500ms;
+    color:black;
+}
+
+.circle:hover span{
+    transform:translateX(0);
+    transition: transform ease-out 500ms;
+}
+.circle:hover{
+    border-radius: 0%;
+    transition:border-radius ease-in 2s;
+} */
+
+
